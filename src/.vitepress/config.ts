@@ -38,6 +38,7 @@ export default defineConfig({
                     items: [
                         {text: 'Introduction', link: '/guide/index'},
                         {text: 'Workflow', link: '/guide/workflow'},
+                        {text: 'Homomorphic Encryption', link: '/guide/he'},
                     ]
                 }
             ]
