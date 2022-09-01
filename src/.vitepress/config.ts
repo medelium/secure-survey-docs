@@ -37,12 +37,8 @@ export default defineConfig({
                     collapsible: false,
                     items: [
                         {text: 'Introduction', link: '/guide/index'},
+                        {text: 'Workflow', link: '/guide/workflow'},
                     ]
-                },
-                {
-                    text: 'Workflows',
-                    collapsible: false,
-                    items: []
                 }
             ]
         }
