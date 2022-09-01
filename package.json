@@ -1,0 +1,34 @@
+{
+    "name": "secure-survey-docs",
+    "private": true,
+    "version": "1.0.0",
+    "description": "This is a package for documentation proposes.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/medelium/secure-survey-docs.git"
+    },
+    "main": "dist/index.js",
+    "files": [
+        "dist/"
+    ],
+    "scripts": {
+        "dev": "vitepress dev src --temp .temp",
+        "build": "vitepress build src --temp .temp",
+        "help": "vitepress --help"
+    },
+    "keywords": [
+        "docs"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "@tada5hi/eslint-config-typescript": "^1.0.6",
+        "eslint": "^8.10.0",
+        "np": "^7.6.0",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.8.2"
+    },
+    "dependencies": {
+        "vitepress": "^1.0.0-alpha.13",
+        "vue": "^3.2.38"
+    }
+}
