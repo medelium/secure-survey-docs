@@ -1,11 +1,12 @@
 # Homomorphic Encryption
 
 Paillier cryptosystem, which is one schema of additive homomorphic encryption.
+
 "That permits users to perform computations on its encrypted data without first decrypting it.
 These resulting computations are left in an encrypted form which, when decrypted, result in an identical output to that
-produced had the operations been performed on the unencrypted data."[1]
+produced had the operations been performed on the unencrypted data." [Wikipedia](https://en.wikipedia.org/wiki/Homomorphic_encryption)
 
-Our developed Rust library for additive homomorphic encryption: [github.com/medelium/secure-suvey-rs](https://github.com/medelium/secure-suvey-rs)
+Our developed Rust library for additive homomorphic encryption: [github.com/medelium/secure-survey-rs](https://github.com/medelium/secure-suvey-rs)
 
 ## Keys
 
@@ -41,5 +42,3 @@ The received cipher can be decrypted using the corresponding private key.
     "_phantom": null
 }
 ```
-
-[1]:[Wikipedia](https://en.wikipedia.org/wiki/Homomorphic_encryption)
