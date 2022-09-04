@@ -3,9 +3,23 @@
 The following workflow is based on some assumptions: 
 - The content type of the request payload is always: **x-www-form-urlencoded**
 
-## Survey
+## Creator Steps
+1. Create a questionnaire
+2. Create question(s) for a questionnaire
+3. Add participant(s) manually or via invitation code
 
-## Create
+## Participant Steps
+1. Accept invitation code.
+2. Submit encrypted question answer for each other participant
+3. Pull questionnaire result
+
+## Participant Loop Steps
+1. Check if the hash of a participated questionnaire changed
+2. If the hash changed repeat Steps **2** & **3** of [Participant Steps](#participant-steps)
+
+## Questionnaire
+
+### Create
 
 ```json
 {
@@ -14,9 +28,9 @@ The following workflow is based on some assumptions:
 }
 ```
 
-## Get Collection
+### Read (Collection)
 
-The first step is to pull all surveys from `http://xxx/surveys`. 
+The first step is to pull all questionnaires from `http://xxx/questionnaires`. 
 The payload looks similar to:
 
 ```json
@@ -42,17 +56,17 @@ The payload looks similar to:
 }
 ```
 
-The `hash` should be used to check if a new participant joined the survey.
-If the stored local hash does not match to the remote hash of the survey anymore,
+The `hash` should be used to check if a new participant joined the questionnaire.
+If the stored local hash does not match to the remote hash of the questionnaire anymore,
 the cipher texts for new participants must be calculated and submitted.
 
-## Survey Question
+## Question
 
 The operator can have one of the following values: 
 - sum
 - avg
 
-## Create
+### Create
 
 ```json
 {
@@ -62,7 +76,7 @@ The operator can have one of the following values:
 }
 ```
 
-## Survey Participants
+## Participants
 
 The `http://xxx/survey-participants?filter[survey_id]=xxx` returns all survey participants for the survey `xxx`. 
 The response payload looks similar to the following dump:
@@ -85,9 +99,9 @@ The response payload looks similar to the following dump:
 }
 ```
 
-## Survey Result
+## Result
 
-## Get
+### Get
 
 ```json
 {
@@ -100,11 +114,11 @@ The response payload looks similar to the following dump:
 }
 ```
 
-## Survey Question Participant Results
+## Question Participant Results
 
 ### Submit
 
-The computed cipher text for a participant must be submitted to the url: `http://xxx/survey-question-participant-results`.
+The computed cipher text for a participant must be submitted to the url: `http://xxx/question-participant-results`.
 The request payload should look like this:
 
 ```json
