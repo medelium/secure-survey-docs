@@ -78,7 +78,7 @@ The operator can have one of the following values:
 
 ## Participants
 
-The `http://xxx/survey-participants?filter[survey_id]=xxx` returns all survey participants for the survey `xxx`. 
+The `http://xxx/survey-participants?filter[questionnaire_id]=xxx` returns all survey participants for the survey `xxx`. 
 The response payload looks similar to the following dump:
 
 ```json
@@ -92,7 +92,7 @@ The response payload looks similar to the following dump:
         {
             "id": "xxxx-xxxx-xxxx-xxxx",
             "public_key": "...",
-            "survey_id": "xxx",
+            "questionnaire_id": "xxx",
             "user_id": "..."
         }
     ]
@@ -124,7 +124,7 @@ The request payload should look like this:
 ```json
 {
     "content": "{....}",
-    "survey_id": "xxx",
+    "questionnaire_id": "xxx",
     "question_id": "xxx",
     "target_participant_id": "xxx",
     "source_participant_id": "yyy"
