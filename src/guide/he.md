@@ -10,7 +10,7 @@ The encryption key is public and can be shared with anyone. The decryption key i
 
 Keypairs are generated with 2048 bit security level.
 
-### Public Key
+### Public/Encryption Key
 
 ```json
 {
@@ -35,4 +35,38 @@ Keypairs are generated with 2048 bit security level.
     "components": 1,
     "_phantom": null
 }
+```
+
+
+## Node Bindings
+All function arguments are JSON strings of in the above displayed format.
+
+- `generate_keypair()` -> returns a JSON keypair containing a private and a public key
+- `encrypt(ek: string, value: number )` -> encrypts the number (64-bit integer) using the key and returns a JSON encrypted cipher
+- `add_many(ek: string, ciphers: string[])` -> adds all given encrypted ciphers using the encryption key and returns a JSON encrypted cipher
+- `add(ek: string, cipher_a: string, cipher_b: string)` -> adds the two encrypted ciphers using the encryption key and returns a JSON encrypted cipher
+
+### Generate keypair
+
+```js
+const { generate_key_pair } = require('./index');
+
+let keypair = generate_key_pair();
+
+```
+
+### Add encrypted ciphers
+
+```js
+const { encrypt_value, add, add_many } = require('./index');
+
+let keypair = JSON.parse(generate_key_pair())
+
+let encrypted_1 = encrypt_value(keypair.ek, 10);
+let encrypted_2 = encrypt_value(keypair.ek, 10);
+// add two ciphers
+let add_1 = add(keypair.ek, encrypted_1, encrypted_2);
+// add a list of ciphers
+let add_2 = add_many(keypair.ek, [encrypted_1, encrypted_2]);
+
 ```
