@@ -37,8 +37,19 @@ export default defineConfig({
                     collapsible: false,
                     items: [
                         {text: 'Introduction', link: '/guide/index'},
-                        {text: 'Workflow', link: '/guide/workflow'},
+                    ]
+                },
+                {
+                    text: 'Internals',
+                    items: [
                         {text: 'Homomorphic Encryption', link: '/guide/he'},
+                        {text: 'Workflow', link: '/guide/workflow'},
+                    ]
+                },
+                {
+                    text: 'Meta',
+                    items: [
+                        {text: 'FAQ', link: '/guide/faq'}
                     ]
                 }
             ]
